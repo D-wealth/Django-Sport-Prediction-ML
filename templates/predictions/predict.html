@@ -1,0 +1,46 @@
+{% extends 'partials/base.html' %}
+
+{% block title %}
+    Predictions
+{% endblock title %}
+
+    
+{% include "nav.html" %}
+
+{% block content %}
+    
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Sex</th>
+                    <th scope="col">Predictions </th>
+                </tr>
+
+                {% for data in predicted_sport %}
+                <tr>
+                    <th scope="row">{{ data.name }}</th>
+                    <td>{{ data.height }}</td>
+                    <td>{{ data.age}}</td>
+                    <td>{{ data.sex }}</td>
+                    <td>{{ data.predictions }}</td>
+                </tr>
+                {% endfor %}
+                <!-- <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr> -->
+            </thead>
+        </table>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
